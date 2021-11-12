@@ -19,6 +19,7 @@ def outlierCleaner(predictions, ages, net_worths):
 
     for prediction, net_worth in predictions, net_worths:
         data[n] = [prediction, net_worth, abs(prediction - net_worth)]
+        n = n + 1
 
     data.sort(key=lambda y: y[2])
 
