@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import random
-import numpy as np
+import numpy
 import matplotlib.pyplot as plt
 import pickle
 
@@ -29,8 +29,9 @@ ages_train, ages_test, net_worths_train, net_worths_test = train_test_split(ages
 
 reg = LinearRegression().fit(ages_train, net_worths_train)
 
+print(reg.coef_)
 
-
+ages_train = outlierCleaner()
 
 
 
