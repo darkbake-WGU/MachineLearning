@@ -1,13 +1,12 @@
 #!/usr/bin/python
 
-import random
-import numpy
-import matplotlib.pyplot as plt
 import pickle
 
-from outlier_cleaner import outlierCleaner
+import matplotlib.pyplot as plt
+import numpy
 from sklearn.linear_model import LinearRegression
 
+from outlier_cleaner import outlierCleaner
 
 ### load up some practice data with outliers in it
 ages = pickle.load( open("practice_outliers_ages.pkl", "rb") )
@@ -31,13 +30,6 @@ reg = LinearRegression().fit(ages_train, net_worths_train)
 
 print(reg.coef_)
 
-ages_train = outlierCleaner()
-
-
-
-
-
-
 try:
     plt.plot(ages, reg.predict(ages), color="blue")
 except NameError:
@@ -48,13 +40,10 @@ plt.show()
 
 ### identify and remove the most outlier-y points
 cleaned_data = []
-try:
-    predictions = reg.predict(ages_train)
-    cleaned_data = outlierCleaner( predictions, ages_train, net_worths_train )
-except NameError:
-    print("your regression object doesn't exist, or isn't name reg")
-    print("can't make predictions to use in identifying outliers")
+predictionNet_Worths = reg.predict(net_worths_train)
+cleaned_data = outlierCleaner(predictionNet_Worths, ages_train, net_worths_train)
 
+print(cleaned_data)
 
 
 
