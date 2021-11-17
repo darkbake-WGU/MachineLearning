@@ -17,7 +17,7 @@ def outlierCleaner(predictions, ages, net_worths):
 
     ### your code goes here
 
-    for prediction, net_worth in predictions, net_worths:
+    for prediction, net_worth, age in predictions, net_worths, ages:
         data[n] = [ages, net_worth, abs(prediction - net_worth)]
         n = n + 1
 
