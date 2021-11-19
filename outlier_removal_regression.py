@@ -39,7 +39,7 @@ plt.show()
 
 
 ### identify and remove the most outlier-y points
-cleaned_data = []
+cleaned_data = []*100
 predictionNet_Worths = reg.predict(net_worths_train)
 cleaned_data = outlierCleaner(predictionNet_Worths, ages_train, net_worths_train)
 
