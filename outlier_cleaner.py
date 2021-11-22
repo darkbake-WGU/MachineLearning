@@ -18,7 +18,8 @@ def outlierCleaner(predictions, ages, net_worths):
     ### your code goes here
 
     for prediction, net_worth, age in zip(predictions, net_worths, ages):
-        data.append([(ages, net_worth, abs(prediction - net_worth))])
+            data.append((age, net_worth, abs(prediction - net_worth)))
+
 
     data.sort(key=lambda y: y[2])
 
