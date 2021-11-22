@@ -12,13 +12,13 @@ def outlierCleaner(predictions, ages, net_worths):
     """
 
     cleaned_data = []
-    data = []*100
+    data = []
     n = 0
 
     ### your code goes here
 
     for prediction, net_worth, age in zip(predictions, net_worths, ages):
-        data[n] = [(ages, net_worth, abs(prediction - net_worth)]
+        data.append([(ages, net_worth, abs(prediction - net_worth))])
 
     data.sort(key=lambda y: y[2])
 
