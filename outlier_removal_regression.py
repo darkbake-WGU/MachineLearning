@@ -64,10 +64,11 @@ if len(cleaned_data) > 0:
         print("you don't seem to have regression imported/created,")
         print("   or else your regression object isn't named reg")
         print("   either way, only draw the scatter plot of the cleaned data")
+
     plt.scatter(ages, net_worths)
     plt.xlabel("ages")
     plt.ylabel("net worths")
-    plt.show()
+    #plt.show()
 else:
     print("outlierCleaner() is returning an empty list, no refitting to be done")
 
