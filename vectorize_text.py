@@ -53,6 +53,10 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
             ### use str.replace() to remove any instances of the words
             ### ["sara", "shackleton", "chris", "germani"]
 
+            text.replace("sara","")
+            text.replace("shackleton","")
+            text.replace("chris","")
+            text.replace("germani","")
 
             ### append the text to word_data
             word_data.append(text)
