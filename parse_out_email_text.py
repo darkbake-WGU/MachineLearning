@@ -15,8 +15,9 @@ def parseOutText(f):
         text = parseOutText(f)
         
         """
-
-
+    #f = open("email_file_name.txt", "r")        
+    
+    
     f.seek(0)  ### go back to beginning of file (annoying)
     all_text = f.read()
 
@@ -26,7 +27,7 @@ def parseOutText(f):
     if len(content) > 1:
         ### remove punctuation
         text_string = content[1].translate(str.maketrans('','',string.punctuation))
-        stemmer = SnowballStemmer()
+        stemmer = SnowballStemmer("english")
         words = [stemmer.stem(word) for word in text_string]
     return words
                  ### project part 2: comment out the line below
