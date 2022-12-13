@@ -48,21 +48,20 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
 	        print(path)
 	        email = open(path, "r")
 	        text = parseOutText(email)
-        ### use str.replace() to remove any instances of the words
-        ### ["sara", "shackleton", "chris", "germani"]
-        for stop in ["sara", "shackleton", "chris", 
+        if temp_counter < 200:
+            for stop in ["sara", "shackleton", "chris", 
                          "germani"]:
-            text = text.replace(stop,'')
+                text = text.replace(stop,'')
         ### append the text to word_data
-        word_data.append(text)
+                word_data.append(text)
         
         ### append a 0 to from_data if email is from Sara, and 1 if email is from Chris
-        if name == "sara":
-               from_data.append(0)
-        else:
-               from_data.append(1)
+                if name == "sara":
+                    from_data.append(0)
+                else:
+                    from_data.append(1)
 
-        email.close()
+email.close()
 
 print("Emails Processed")
 from_sara.close()
