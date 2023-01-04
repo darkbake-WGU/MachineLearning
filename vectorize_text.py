@@ -5,7 +5,7 @@
 
 import os
 import pickle
-import re
+#import re
 import sys
 
 sys.path.append( "../tools/" )
@@ -42,9 +42,8 @@ temp_counter = 0
 for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
     for path in from_person:
         # only look at first 100 emails
-        if temp_counter < 100:
+  #      if temp_counter < 100:
             path = os.path.join('..', path[:-1])
-            #print path
             print(os.getcwd())
             print(path)
             email = open(path, "r")
@@ -76,8 +75,8 @@ print ("emails processed")
 from_sara.close()
 from_chris.close()
 
-pickle.dump( word_data, open("your_word_data.pkl", "w") )
-pickle.dump( from_data, open("your_email_authors.pkl", "w") )
+pickle.dump( word_data, open("your_word_data.pkl", "wb") )
+pickle.dump( from_data, open("your_email_authors.pkl", "wb") )
 
 print (word_data[0])
 print (from_data[0])
